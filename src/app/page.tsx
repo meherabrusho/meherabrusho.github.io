@@ -7,8 +7,8 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative pt-20 pb-10 flex flex-col items-center text-center">
         <div className="absolute inset-0 -z-10 flex items-center justify-center">
-          <div className="w-[500px] h-[500px] bg-purple-500/20 dark:bg-purple-600/20 rounded-full blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50 mix-blend-screen animate-pulse duration-[10000ms]" />
-          <div className="w-[400px] h-[400px] bg-cyan-500/20 dark:bg-cyan-500/20 rounded-full blur-[100px] absolute top-1/3 left-1/3 opacity-50 mix-blend-screen animate-pulse duration-[12000ms] delay-75" />
+          <div className="w-[500px] h-[500px] bg-purple-500/20 dark:bg-purple-600/20 rounded-full blur-[100px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-50 mix-blend-screen animate-pulse" />
+          <div className="w-[400px] h-[400px] bg-cyan-500/20 dark:bg-cyan-500/20 rounded-full blur-[100px] absolute top-1/3 left-1/3 opacity-50 mix-blend-screen animate-pulse delay-75" />
         </div>
         
         <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6">
