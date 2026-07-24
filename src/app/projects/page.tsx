@@ -13,7 +13,7 @@ export default function Projects() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project) => (
-          <div key={project.title} className="flex flex-col p-6 rounded-2xl bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 backdrop-blur-sm group hover:border-purple-500/50 transition-colors">
+          <div key={project.title} className="glass-card hover-up flex flex-col p-6 rounded-2xl group">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-purple-500 transition-colors">{project.title}</h3>
             <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow">{project.description}</p>
             

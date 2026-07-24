@@ -15,7 +15,7 @@ export default function Blog() {
 
       <div className="space-y-8">
         {posts.map((post) => (
-          <article key={post.slug} className="flex flex-col p-6 rounded-2xl bg-white dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 backdrop-blur-sm group hover:border-cyan-500/50 transition-colors">
+          <article key={post.slug} className="glass-card hover-up flex flex-col p-6 rounded-2xl group">
             <Link href={`/blog/${post.slug}`} className="block">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-cyan-500 transition-colors">
                 {post.title}

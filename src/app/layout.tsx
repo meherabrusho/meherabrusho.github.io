@@ -1,22 +1,37 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Outfit, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
+  variable: "--font-sans",
+  subsets: ["latin"],
+});
+
+const outfit = Outfit({
+  variable: "--font-heading",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+  variable: "--font-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Software Engineer & AI Enthusiast Portfolio",
   description: "Portfolio and blog showcasing software engineering projects and AI explorations.",
+  openGraph: {
+    title: "Software Engineer & AI Enthusiast Portfolio",
+    description: "Portfolio and blog showcasing software engineering projects and AI explorations.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Software Engineer & AI Enthusiast Portfolio",
+    description: "Portfolio and blog showcasing software engineering projects and AI explorations.",
+  },
 };
 
 export default function RootLayout({
@@ -27,11 +42,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${inter.variable} ${outfit.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-gray-50 dark:bg-[#0A0F1A] text-gray-900 dark:text-gray-100 transition-colors duration-300">
+      <body className="min-h-full flex flex-col bg-gray-50 dark:bg-[#0A0F1A] text-gray-900 dark:text-gray-100 transition-colors duration-300 font-sans">
+        <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-purple-600 text-white px-4 py-2 rounded-md z-50">
+          Skip to main content
+        </a>
         <Navbar />
-        <main className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <main id="main" className="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           {children}
         </main>
         <Footer />
