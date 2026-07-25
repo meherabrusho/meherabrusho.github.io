@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mohtasin Meherab Sikder — Developer Portfolio & Blog
+
+A premium, minimalistic developer portfolio showcasing the career, projects, and insights of **Mohtasin Meherab Sikder**, Lead Engineer at Samsung Electronics specializing in iOS, IoT, and Agentic AI.
+
+Developed using **Next.js 16**, **Tailwind CSS 4**, and **TypeScript**, styled with a focus on clean typography, responsive layout, glassmorphic cards, and high-quality dark mode integration.
+
+---
+
+## Technical Stack & Architecture
+
+- **Framework**: Next.js 16 (App Router, Turbopack, Server/Client components)
+- **Styling**: Tailwind CSS 4 with `@tailwindcss/typography`
+- **Branding & Theme**: Premium dark-mode prioritized aesthetic using `next-themes`
+- **Data Layer**: Clean TypeScript models for structured experience timeline, skills, and achievements
+- **Deployment**: Configured for GitHub Pages via `gh-pages`
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
+### 1. Install Dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Run the Development Server
+```bash
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) with your browser to view the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Build & Type Check
+Verify that the production build compiles successfully:
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+This portfolio is configured to deploy directly to GitHub Pages.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To trigger the deploy pipeline (which runs build and pushes the static assets to the `gh-pages` branch):
+```bash
+npm run deploy
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Project Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `src/app/` — Pages and layout configuration
+- `src/components/` — Reusable UI modules (Timeline, Navbar, Footer, ThemeToggle)
+- `src/data/` — Static data assets (experiences, skills, achievements, projects)
+- `src/lib/` — Helper scripts (e.g. blog post parser)
+- `public/` — Static media assets (PDFs, images)
