@@ -1,8 +1,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #ffffff;
+  --background: #f8fafc;
   --foreground: #171717;
 }
 
@@ -14,11 +15,10 @@
   --font-mono: var(--font-mono, ui-monospace, monospace);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark mode via class (next-themes) */
+.dark {
+  --background: #0a0f1a;
+  --foreground: #ededed;
 }
 
 @layer base {
@@ -27,29 +27,92 @@
     color: var(--foreground);
     @apply font-sans;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading tracking-tight;
   }
 }
 
 @layer utilities {
+  /* --- Glass Card --- */
   .glass-card {
-    @apply bg-white/60 dark:bg-gray-900/40 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm dark:shadow-none;
-  }
-  
-  .hover-up {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-purple-500/10 dark:hover:shadow-cyan-500/10;
+    @apply bg-white/80 dark:bg-gray-900/40 backdrop-blur-xl 
+      border border-gray-200/80 dark:border-gray-800/50 
+      shadow-sm shadow-gray-200/50 dark:shadow-none;
   }
 
+  /* --- Hover Effects --- */
+  .hover-up {
+    @apply transition-all duration-300 hover:-translate-y-1.5 
+      hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-cyan-500/10;
+  }
+
+  .hover-glow {
+    @apply relative overflow-hidden;
+  }
+  .hover-glow::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 
+      opacity-0 transition-opacity duration-300 pointer-events-none;
+    border-radius: inherit;
+  }
+  .hover-glow:hover::before {
+    @apply opacity-100;
+  }
+
+  /* --- Animated Gradient Text --- */
   .animate-gradient-shift {
-    background-size: 200% 200%;
-    animation: gradientShift 8s ease infinite;
+    background-size: 300% 300%;
+    animation: gradientShift 6s ease infinite;
+  }
+
+  /* --- Entrance Animations --- */
+  .fade-in-up {
+    animation: fadeInUp 0.7s ease-out both;
+  }
+  .fade-in-up-delay-1 { animation-delay: 0.1s; }
+  .fade-in-up-delay-2 { animation-delay: 0.2s; }
+  .fade-in-up-delay-3 { animation-delay: 0.3s; }
+  .fade-in-up-delay-4 { animation-delay: 0.4s; }
+  .fade-in-up-delay-5 { animation-delay: 0.5s; }
+  .fade-in-up-delay-6 { animation-delay: 0.6s; }
+
+  .fade-in {
+    animation: fadeIn 0.6s ease-out both;
+  }
+  .fade-in-delay-1 { animation-delay: 0.15s; }
+  .fade-in-delay-2 { animation-delay: 0.3s; }
+
+  /* --- Section divider --- */
+  .section-divider {
+    @apply w-20 h-1 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto;
   }
 }
 
+/* --- Keyframes --- */
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 0.6; transform: scale(1.05); }
 }
