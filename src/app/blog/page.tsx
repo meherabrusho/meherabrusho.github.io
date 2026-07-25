@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Blog",
   description:
-    "Thoughts on software engineering, artificial intelligence, and building things — by Meherab Rusho.",
+    "Thoughts on iOS, IoT, Agentic AI, and software engineering — by Mohtasin Meherab Sikder.",
 };
 
 export default function Blog() {
@@ -14,15 +14,14 @@ export default function Blog() {
   return (
     <div className="space-y-12">
       <div className="space-y-4 fade-in-up">
-        <h2 className="text-sm font-semibold text-purple-600 dark:text-cyan-400 uppercase tracking-wider">
+        <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
           Blog
         </h2>
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
           Latest Posts
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
-          Thoughts on software engineering, artificial intelligence, and
-          building things.
+          Thoughts on iOS, IoT, Agentic AI, and software engineering.
         </p>
       </div>
 
@@ -34,7 +33,7 @@ export default function Blog() {
           >
             <Link href={`/blog/${post.slug}`} className="block">
               <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-cyan-400 transition-colors">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   {post.title}
                 </h3>
                 <time className="text-sm text-gray-400 dark:text-gray-500 whitespace-nowrap mt-1">

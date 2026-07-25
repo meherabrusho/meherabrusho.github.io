@@ -22,23 +22,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Meherab Rusho — Software Engineer & AI Enthusiast",
+    default: "Mohtasin Meherab Sikder — Lead Engineer | iOS, IoT & Agentic AI",
     template: "%s | Meherab Rusho",
   },
   description:
-    "Portfolio and blog by Meherab Rusho — software engineer building high-performance systems and exploring the frontiers of artificial intelligence.",
+    "Lead Engineer at Samsung Electronics — building robust iOS ecosystems, reliable IoT connectivity, and autonomous AI systems. Portfolio and blog by Mohtasin Meherab Sikder.",
   openGraph: {
-    title: "Meherab Rusho — Software Engineer & AI Enthusiast",
+    title: "Mohtasin Meherab Sikder — Lead Engineer | iOS, IoT & Agentic AI",
     description:
-      "Portfolio and blog showcasing software engineering projects and AI explorations.",
+      "Lead Engineer at Samsung Electronics — iOS, IoT & Agentic AI. Portfolio and blog.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Meherab Rusho — Software Engineer & AI Enthusiast",
+    title: "Mohtasin Meherab Sikder — Lead Engineer | iOS, IoT & Agentic AI",
     description:
-      "Portfolio and blog showcasing software engineering projects and AI explorations.",
+      "Lead Engineer at Samsung Electronics — iOS, IoT & Agentic AI. Portfolio and blog.",
   },
   robots: {
     index: true,

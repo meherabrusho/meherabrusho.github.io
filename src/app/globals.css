@@ -3,7 +3,7 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #f8fafc;
+  --background: #fafafa;
   --foreground: #171717;
 }
 
@@ -17,7 +17,7 @@
 
 /* Dark mode via class (next-themes) */
 .dark {
-  --background: #0a0f1a;
+  --background: #09090b;
   --foreground: #ededed;
 }
 
@@ -36,15 +36,15 @@
 @layer utilities {
   /* --- Glass Card --- */
   .glass-card {
-    @apply bg-white/80 dark:bg-gray-900/40 backdrop-blur-xl 
-      border border-gray-200/80 dark:border-gray-800/50 
-      shadow-sm shadow-gray-200/50 dark:shadow-none;
+    @apply bg-white/80 dark:bg-gray-900/40 backdrop-blur-xl
+      border border-gray-200/80 dark:border-gray-800/50
+      shadow-sm shadow-gray-200/30 dark:shadow-none;
   }
 
   /* --- Hover Effects --- */
   .hover-up {
-    @apply transition-all duration-300 hover:-translate-y-1.5 
-      hover:shadow-xl hover:shadow-purple-500/10 dark:hover:shadow-cyan-500/10;
+    @apply transition-all duration-300 hover:-translate-y-1
+      hover:shadow-lg hover:shadow-gray-900/5 dark:hover:shadow-purple-500/5;
   }
 
   .hover-glow {
@@ -52,7 +52,7 @@
   }
   .hover-glow::before {
     content: '';
-    @apply absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-500/10 
+    @apply absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5
       opacity-0 transition-opacity duration-300 pointer-events-none;
     border-radius: inherit;
   }
@@ -85,7 +85,7 @@
 
   /* --- Section divider --- */
   .section-divider {
-    @apply w-20 h-1 rounded-full bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto;
+    @apply w-20 h-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 mx-auto;
   }
 }
 
@@ -99,7 +99,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -113,6 +113,6 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50%      { opacity: 0.6; transform: scale(1.05); }
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%      { opacity: 0.5; transform: scale(1.03); }
 }

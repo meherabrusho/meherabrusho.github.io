@@ -6,22 +6,22 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects",
   description:
-    "A showcase of open-source work, personal experiments, and AI side projects by Meherab Rusho.",
+    "A showcase of iOS, IoT, and AI engineering work by Mohtasin Meherab Sikder.",
 };
 
 export default function Projects() {
   return (
     <div className="space-y-12">
       <div className="space-y-4 fade-in-up">
-        <h2 className="text-sm font-semibold text-purple-600 dark:text-cyan-400 uppercase tracking-wider">
+        <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider">
           Portfolio
         </h2>
         <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
           Projects
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl leading-relaxed">
-          A showcase of my open-source work, personal experiments, and AI side
-          projects.
+          A showcase of iOS, IoT, and AI engineering work — from device
+          onboarding architectures to autonomous AI orchestration.
         </p>
       </div>
 
@@ -69,7 +69,7 @@ export default function Projects() {
                   href={project.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center text-sm font-medium text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
+                  className="flex items-center text-sm font-medium text-cyan-600 dark:text-purple-400 hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
                 >
                   <FaExternalLinkAlt className="w-4 h-4 mr-2" />
                   Live Demo

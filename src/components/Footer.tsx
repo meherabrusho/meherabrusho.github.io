@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { Brain } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -16,22 +15,10 @@ const socialLinks = [
     hoverClass: 'hover:text-gray-900 dark:hover:text-white',
   },
   {
-    href: 'https://linkedin.com/',
+    href: 'https://www.linkedin.com/in/mohtasin-meherab/',
     icon: FaLinkedin,
     label: 'LinkedIn',
     hoverClass: 'hover:text-blue-600 dark:hover:text-blue-400',
-  },
-  {
-    href: 'https://x.com/',
-    icon: FaTwitter,
-    label: 'Twitter',
-    hoverClass: 'hover:text-blue-400 dark:hover:text-blue-300',
-  },
-  {
-    href: 'https://huggingface.co/',
-    icon: Brain,
-    label: 'HuggingFace',
-    hoverClass: 'hover:text-yellow-500 dark:hover:text-yellow-400',
   },
 ];
 
@@ -39,17 +26,18 @@ export default function Footer() {
   return (
     <footer className="mt-16 border-t border-gray-200/80 dark:border-gray-800/50 bg-gray-50/50 dark:bg-[#060a12]">
       {/* Gradient top accent */}
-      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+      <div className="h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-3">
-            <span className="text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500">
-              Meherab Rusho
+            <span className="text-lg font-bold text-gray-900 dark:text-white">
+              Meherab<span className="text-purple-500">.</span>
             </span>
             <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">
-              Software engineer building high-performance systems and exploring the frontiers of AI.
+              Lead Engineer at Samsung Electronics — building robust iOS
+              ecosystems, reliable IoT connectivity, and autonomous AI systems.
             </p>
           </div>
 
@@ -63,7 +51,7 @@ export default function Footer() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-cyan-400 transition-colors w-fit"
+                  className="text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors w-fit"
                 >
                   {link.label}
                 </Link>
@@ -90,13 +78,20 @@ export default function Footer() {
                 </a>
               ))}
             </div>
+            <a
+              href="mailto:rusho1152032@gmail.com"
+              className="block text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors w-fit"
+            >
+              rusho1152032@gmail.com
+            </a>
           </div>
         </div>
 
         {/* Bottom bar */}
         <div className="mt-10 pt-6 border-t border-gray-200/50 dark:border-gray-800/30 flex flex-col sm:flex-row justify-between items-center gap-2">
           <p className="text-xs text-gray-400 dark:text-gray-500">
-            © {new Date().getFullYear()} Meherab Rusho. All rights reserved.
+            © {new Date().getFullYear()} Mohtasin Meherab Sikder. All rights
+            reserved.
           </p>
           <p className="text-xs text-gray-400 dark:text-gray-500">
             Built with Next.js &amp; Tailwind CSS

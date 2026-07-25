@@ -3,8 +3,8 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { Brain, Menu, X } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const navLinks = [
@@ -21,22 +21,10 @@ const socialLinks = [
     hoverClass: 'hover:text-gray-900 dark:hover:text-white',
   },
   {
-    href: 'https://linkedin.com/',
+    href: 'https://www.linkedin.com/in/mohtasin-meherab/',
     icon: FaLinkedin,
     label: 'LinkedIn',
     hoverClass: 'hover:text-blue-600 dark:hover:text-blue-400',
-  },
-  {
-    href: 'https://x.com/',
-    icon: FaTwitter,
-    label: 'Twitter / X',
-    hoverClass: 'hover:text-blue-400 dark:hover:text-blue-300',
-  },
-  {
-    href: 'https://huggingface.co/',
-    icon: Brain,
-    label: 'HuggingFace',
-    hoverClass: 'hover:text-yellow-500 dark:hover:text-yellow-400',
   },
 ];
 
@@ -55,9 +43,9 @@ export default function Navbar() {
           <div className="flex items-center space-x-8">
             <Link
               href="/"
-              className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-cyan-500 hover:opacity-80 transition-opacity"
+              className="text-xl font-bold text-gray-900 dark:text-white hover:opacity-80 transition-opacity"
             >
-              Meherab Rusho
+              Meherab<span className="text-purple-500">.</span>
             </Link>
             <div className="hidden md:flex space-x-1">
               {navLinks.map((link) => {
@@ -71,7 +59,7 @@ export default function Navbar() {
                     href={link.href}
                     className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive
-                        ? 'text-purple-600 dark:text-cyan-400 bg-purple-50 dark:bg-cyan-950/30'
+                        ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30'
                         : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800/50'
                     }`}
                   >
@@ -137,7 +125,7 @@ export default function Navbar() {
                   onClick={() => setMobileOpen(false)}
                   className={`block px-4 py-3 rounded-xl text-base font-medium transition-colors ${
                     isActive
-                      ? 'text-purple-600 dark:text-cyan-400 bg-purple-50 dark:bg-cyan-950/30'
+                      ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30'
                       : 'text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50'
                   }`}
                 >

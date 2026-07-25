@@ -46,7 +46,7 @@ export default async function BlogPost({ params }: Props) {
     <article className="max-w-3xl mx-auto space-y-8 fade-in-up">
       <Link
         href="/blog"
-        className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors group"
+        className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors group"
       >
         <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
         Back to Blog
@@ -82,7 +82,7 @@ export default async function BlogPost({ params }: Props) {
         </div>
       </header>
 
-      <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-heading prose-a:text-purple-600 dark:prose-a:text-cyan-400 prose-code:before:content-none prose-code:after:content-none">
+      <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-heading prose-a:text-purple-600 dark:prose-a:text-purple-400 prose-code:before:content-none prose-code:after:content-none">
         <ReactMarkdown>{post.content}</ReactMarkdown>
       </div>
 
@@ -90,7 +90,7 @@ export default async function BlogPost({ params }: Props) {
       <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
         <Link
           href="/blog"
-          className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-cyan-400 transition-colors group"
+          className="inline-flex items-center text-sm font-medium text-gray-500 hover:text-purple-600 dark:text-gray-400 dark:hover:text-purple-400 transition-colors group"
         >
           <ArrowLeft className="w-4 h-4 mr-2 group-hover:-translate-x-1 transition-transform" />
           Back to all posts
