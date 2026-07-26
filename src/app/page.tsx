@@ -9,7 +9,7 @@ import {
   Award,
   Cpu,
 } from 'lucide-react';
-import { projects } from '@/data/projects';
+import { getAllProjects } from '@/lib/projects';
 import { skills } from '@/data/skills';
 import { achievements } from '@/data/achievements';
 import { education } from '@/data/achievements';
@@ -18,7 +18,10 @@ import ExperienceTimeline from '@/components/ExperienceTimeline';
 
 export default function Home() {
   const latestPosts = getAllPosts().slice(0, 3);
-  const featuredProjects = projects.slice(0, 3);
+  const allProjects = getAllProjects();
+  const featuredProjects = allProjects.filter(p => p.featured).length > 0
+    ? allProjects.filter(p => p.featured).slice(0, 3)
+    : allProjects.slice(0, 3);
 
   return (
     <div className="flex flex-col space-y-24 md:space-y-32">
@@ -61,16 +64,24 @@ export default function Home() {
           at Samsung Electronics.
         </p>
 
-        <div className="fade-in-up fade-in-up-delay-3 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+        <div className="fade-in-up fade-in-up-delay-3 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center justify-center">
           <Link
             href="/projects"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all hover:scale-[1.03] active:scale-95 shadow-lg shadow-gray-900/10 dark:shadow-white/5"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all hover:scale-[1.03] active:scale-95 shadow-lg shadow-gray-900/10 dark:shadow-white/5 w-full sm:w-auto"
           >
-            View Projects
+            View Case Studies
           </Link>
           <a
+            href="/Resume - Mohtasin Meherab Sikder.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-purple-200 dark:border-purple-800/40 bg-purple-50/50 dark:bg-purple-950/20 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 transition-all hover:scale-[1.03] active:scale-95 w-full sm:w-auto"
+          >
+            Get Resume
+          </a>
+          <a
             href="mailto:rusho1152032@gmail.com"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 text-gray-900 dark:text-white font-semibold hover:border-gray-400 dark:hover:border-gray-500 transition-all"
+            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-gray-200 dark:border-gray-700 bg-white/50 dark:bg-gray-900/50 text-gray-900 dark:text-white font-semibold hover:border-gray-400 dark:hover:border-gray-500 transition-all w-full sm:w-auto"
           >
             <Mail className="w-4 h-4 mr-2" />
             Get In Touch
@@ -327,9 +338,10 @@ export default function Home() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featuredProjects.map((project) => (
-            <div
+            <Link
               key={project.title}
-              className="glass-card hover-up flex flex-col p-6 rounded-2xl group"
+              href={`/projects/${project.slug}`}
+              className="glass-card hover-up flex flex-col p-6 rounded-2xl group cursor-pointer"
             >
               <div className="flex items-start justify-between mb-4">
                 <h4 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
@@ -350,7 +362,7 @@ export default function Home() {
                   </span>
                 ))}
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 

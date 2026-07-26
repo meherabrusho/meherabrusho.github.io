@@ -1,6 +1,7 @@
-import { projects } from "@/data/projects";
+import { getAllProjects } from "@/lib/projects";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { Cpu } from "lucide-react";
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
 };
 
 export default function Projects() {
+  const projects = getAllProjects();
+
   return (
     <div className="space-y-12">
       <div className="space-y-4 fade-in-up">
@@ -32,9 +35,11 @@ export default function Projects() {
             className={`glass-card hover-up hover-glow flex flex-col p-6 rounded-2xl group fade-in-up fade-in-up-delay-${Math.min(index + 1, 6)}`}
           >
             <div className="flex items-start justify-between mb-3">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-cyan-400 transition-colors">
-                {project.title}
-              </h3>
+              <Link href={`/projects/${project.slug}`} className="block group">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-cyan-400 transition-colors">
+                  {project.title}
+                </h3>
+              </Link>
               <Cpu className="w-5 h-5 text-gray-300 dark:text-gray-700 flex-shrink-0 ml-2 mt-1" />
             </div>
             <p className="text-gray-600 dark:text-gray-400 mb-6 flex-grow leading-relaxed">
@@ -53,6 +58,12 @@ export default function Projects() {
             </div>
 
             <div className="flex space-x-4 mt-auto">
+              <Link
+                href={`/projects/${project.slug}`}
+                className="flex items-center text-sm font-medium text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors mr-auto"
+              >
+                Read Case Study
+              </Link>
               {project.repo && (
                 <a
                   href={project.repo}

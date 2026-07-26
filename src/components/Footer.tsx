@@ -56,6 +56,14 @@ export default function Footer() {
                   {link.label}
                 </Link>
               ))}
+              <a
+                href="/Resume - Mohtasin Meherab Sikder.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-500 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors w-fit"
+              >
+                Resume
+              </a>
             </div>
           </div>
 

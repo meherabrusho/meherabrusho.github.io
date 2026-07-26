@@ -90,6 +90,15 @@ export default function Navbar() {
 
             <div className="hidden sm:block w-px h-5 bg-gray-200 dark:bg-gray-700" />
 
+            <a
+              href="/Resume - Mohtasin Meherab Sikder.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-lg border border-purple-200 dark:border-purple-800/40 bg-purple-50/50 dark:bg-purple-950/20 text-purple-600 dark:text-purple-400 text-sm font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 transition-colors"
+            >
+              Resume
+            </a>
+
             <ThemeToggle />
 
             {/* Mobile menu button */}
@@ -133,6 +142,15 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <a
+              href="/Resume - Mohtasin Meherab Sikder.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="block px-4 py-3 rounded-xl text-base font-medium text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/30 transition-colors"
+            >
+              Resume
+            </a>
           </div>
           <div className="px-4 pb-4 pt-2 border-t border-gray-100 dark:border-gray-800">
             <div className="flex items-center space-x-4">
