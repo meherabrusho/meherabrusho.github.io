@@ -34,11 +34,11 @@
 }
 
 @layer utilities {
-  /* --- Glass Card --- */
+  /* --- Glass Card — improved contrast --- */
   .glass-card {
-    @apply bg-white/80 dark:bg-gray-900/40 backdrop-blur-xl
-      border border-gray-200/80 dark:border-gray-800/50
-      shadow-sm shadow-gray-200/30 dark:shadow-none;
+    @apply bg-white/90 dark:bg-gray-800/50 backdrop-blur-xl
+      border border-gray-200 dark:border-gray-700/60
+      shadow-sm shadow-gray-200/50 dark:shadow-none;
   }
 
   /* --- Hover Effects --- */
@@ -60,13 +60,22 @@
     @apply opacity-100;
   }
 
+  /* --- Hover Border Glow --- */
+  .hover-border-glow {
+    @apply transition-all duration-300;
+  }
+  .hover-border-glow:hover {
+    @apply border-purple-300/60 dark:border-purple-700/50
+      shadow-md shadow-purple-500/[0.04] dark:shadow-purple-500/[0.08];
+  }
+
   /* --- Animated Gradient Text --- */
   .animate-gradient-shift {
     background-size: 300% 300%;
     animation: gradientShift 6s ease infinite;
   }
 
-  /* --- Entrance Animations --- */
+  /* --- Entrance Animations (hero only — above fold) --- */
   .fade-in-up {
     animation: fadeInUp 0.7s ease-out both;
   }
@@ -83,9 +92,93 @@
   .fade-in-delay-1 { animation-delay: 0.15s; }
   .fade-in-delay-2 { animation-delay: 0.3s; }
 
+  /* --- Scroll-triggered Animations --- */
+  .animate-on-scroll {
+    opacity: 0;
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+  .animate-on-scroll.fade-up {
+    transform: translateY(24px);
+  }
+  .animate-on-scroll.fade-in {
+    transform: none;
+  }
+  .animate-on-scroll.fade-left {
+    transform: translateX(-24px);
+  }
+  .animate-on-scroll.fade-right {
+    transform: translateX(24px);
+  }
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+
   /* --- Section divider --- */
   .section-divider {
     @apply w-20 h-1 rounded-full bg-gradient-to-r from-purple-500 to-blue-500 mx-auto;
+  }
+
+  /* --- Section alternate background --- */
+  .section-alt-bg {
+    @apply -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8 py-16 md:py-20
+      bg-gray-50/70 dark:bg-gray-900/30
+      border-y border-gray-100 dark:border-gray-800/40;
+  }
+
+  /* --- Section decorative break --- */
+  .section-break {
+    @apply flex items-center justify-center py-2;
+  }
+  .section-break::before,
+  .section-break::after {
+    content: '';
+    @apply flex-1 h-px bg-gradient-to-r max-w-24;
+  }
+  .section-break::before {
+    @apply from-transparent to-gray-200 dark:to-gray-800;
+  }
+  .section-break::after {
+    @apply from-gray-200 dark:from-gray-800 to-transparent;
+  }
+
+  /* --- Subtitle gradient underline --- */
+  .subtitle-gradient {
+    @apply relative inline-block;
+  }
+  .subtitle-gradient::after {
+    content: '';
+    @apply absolute -bottom-1.5 left-0 right-0 h-0.5 rounded-full
+      bg-gradient-to-r from-purple-500 via-blue-500 to-purple-500;
+    background-size: 200% 100%;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  /* --- Skill tag hover --- */
+  .skill-tag {
+    @apply transition-all duration-200 cursor-default;
+  }
+  .skill-tag:hover {
+    @apply bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300
+      border-purple-200/60 dark:border-purple-800/50;
+  }
+
+  /* --- Primary CTA shimmer --- */
+  .btn-shimmer {
+    @apply relative overflow-hidden;
+  }
+  .btn-shimmer::after {
+    content: '';
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.12) 45%,
+      rgba(255, 255, 255, 0.12) 55%,
+      transparent 60%
+    );
+    background-size: 250% 100%;
+    animation: shimmer 6s ease-in-out infinite;
   }
 }
 
@@ -115,4 +208,32 @@
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.3; transform: scale(1); }
   50%      { opacity: 0.5; transform: scale(1.03); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes heroFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  25% {
+    transform: translateY(-12px) rotate(3deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-6px) rotate(-2deg);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-16px) rotate(1deg);
+    opacity: 0.7;
+  }
+}
+
+.hero-float-icon {
+  animation: heroFloat 18s ease-in-out infinite;
 }

@@ -3,6 +3,7 @@ import { Inter, Outfit, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
+import SpaceBackground from "@/components/SpaceBackground";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,23 +23,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mohtasin Meherab Sikder — Lead Engineer | iOS, IoT & Agentic AI",
+    default: "Mohtasin Meherab Sikder — AI Engineer | Agentic AI & Architecture",
     template: "%s | Meherab Rusho",
   },
   description:
-    "Lead Engineer at Samsung Electronics — building robust iOS ecosystems, reliable IoT connectivity, and autonomous AI systems. Portfolio and blog by Mohtasin Meherab Sikder.",
+    "AI Engineer architecting autonomous AI systems using multi-agent orchestration, LLM-driven automation, and scalable architectures. Portfolio and blog by Mohtasin Meherab Sikder.",
   openGraph: {
-    title: "Mohtasin Meherab Sikder — Lead Engineer | iOS, IoT & Agentic AI",
+    title: "Mohtasin Meherab Sikder — AI Engineer | Agentic AI & Architecture",
     description:
-      "Lead Engineer at Samsung Electronics — iOS, IoT & Agentic AI. Portfolio and blog.",
+      "AI Engineer specializing in Agentic AI, Machine Learning, and scalable architectures. Portfolio and blog.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohtasin Meherab Sikder — Lead Engineer | iOS, IoT & Agentic AI",
+    title: "Mohtasin Meherab Sikder — AI Engineer | Agentic AI & Architecture",
     description:
-      "Lead Engineer at Samsung Electronics — iOS, IoT & Agentic AI. Portfolio and blog.",
+      "AI Engineer specializing in Agentic AI, Machine Learning, and scalable architectures. Portfolio and blog.",
   },
   robots: {
     index: true,
@@ -65,6 +66,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
+          <SpaceBackground />
           <Navbar />
           <main
             id="main"

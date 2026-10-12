@@ -13,10 +13,10 @@ export const experience: ExperienceEntry[] = [
     period: 'Mar 2026 – Present',
     location: 'Dhaka, Bangladesh',
     highlights: [
-      'Mentored an agile team of 4 engineers to drive high-quality technical execution aligned with strategic business goals.',
-      'Architected an autonomous AI orchestration layer to triage and analyze user feedback (VoCs), drastically reducing MTTR.',
-      'Spearheaded a remote device-to-device test framework for IoT & Mobile Automation, eliminating physical hardware constraints and establishing CI guardrails.',
-      'Led the technical discovery and engineering of Proof of Concepts (PoCs) for next-generation mobile AI features.',
+      'Architected an autonomous AI orchestration layer utilizing multi-agent systems and MCP tooling to triage user feedback (VoCs), drastically reducing MTTR.',
+      'Led the technical discovery, prototyping, and engineering of next-generation AI and Machine Learning features for consumer applications.',
+      'Spearheaded a remote device-to-device test framework for automation, establishing rigorous CI guardrails and eliminating physical hardware constraints.',
+      'Mentored an agile team of engineers, driving high-quality technical execution and aligning technical architecture with strategic business goals.',
     ],
   },
   {

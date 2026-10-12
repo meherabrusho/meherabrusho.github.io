@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { ArrowLeft as ArrowLeftIcon, Cpu } from "lucide-react";
+import Mermaid from "@/components/Mermaid";
 import type { Metadata } from "next";
 
 interface Props {
@@ -97,7 +98,25 @@ export default async function ProjectCaseStudy({ params }: Props) {
       </header>
 
       <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-heading prose-a:text-purple-600 dark:prose-a:text-purple-400 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-50 dark:prose-pre:bg-gray-900/50 prose-pre:border prose-pre:border-gray-200/50 dark:prose-pre:border-gray-800/50">
-        <ReactMarkdown>{project.content}</ReactMarkdown>
+        <ReactMarkdown
+          components={{
+            code(props) {
+              const { children, className, node: _node, ...rest } = props;
+              void _node;
+              const match = /language-(\w+)/.exec(className || "");
+              if (match && match[1] === "mermaid") {
+                return <Mermaid chart={String(children).replace(/\n$/, "")} />;
+              }
+              return (
+                <code {...rest} className={className}>
+                  {children}
+                </code>
+              );
+            },
+          }}
+        >
+          {project.content}
+        </ReactMarkdown>
       </div>
 
       {/* Navigation footer */}
