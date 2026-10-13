@@ -6,6 +6,9 @@ repo: "https://github.com/meherabrusho"
 link: "#"
 featured: true
 order: 1
+metric: "80%+ Automated Triage"
+role: "Technical Lead · AI Systems"
+domain: "Agentic AI & MCP Orchestration"
 ---
 
 ## The Problem

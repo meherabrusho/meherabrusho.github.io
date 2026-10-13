@@ -6,6 +6,9 @@ repo: "https://github.com/meherabrusho"
 link: "#"
 featured: false
 order: 4
+metric: "88% BLE Success Rate"
+role: "Core Contributor · IoT Modules"
+domain: "Hardware Protocol & Mesh Comms"
 ---
 
 ## The Problem

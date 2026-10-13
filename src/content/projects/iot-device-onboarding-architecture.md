@@ -6,6 +6,9 @@ repo: "https://github.com/meherabrusho"
 link: "#"
 featured: true
 order: 2
+metric: "400+ Files · 0 Regressions"
+role: "Tech Lead · Samsung SmartThings"
+domain: "Distributed IoT & Mobile Platform"
 ---
 
 ## The Problem

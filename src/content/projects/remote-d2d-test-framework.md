@@ -6,6 +6,9 @@ repo: "https://github.com/meherabrusho"
 link: "#"
 featured: true
 order: 3
+metric: "Hardware-Free CI Automation"
+role: "Lead Engineer · Automation Infra"
+domain: "Virtualization & CI Guardrails"
 ---
 
 ## The Problem
