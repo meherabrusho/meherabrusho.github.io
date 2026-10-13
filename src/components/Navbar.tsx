@@ -94,7 +94,7 @@ export default function Navbar() {
               href="/Resume - Mohtasin Meherab Sikder.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-lg border border-purple-200 dark:border-purple-800/40 bg-purple-50/50 dark:bg-purple-950/20 text-purple-600 dark:text-purple-400 text-sm font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 transition-colors"
+              className="hidden sm:inline-flex items-center justify-center px-4 py-1.5 rounded-lg border border-purple-300 dark:border-purple-800/60 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300 text-sm font-semibold hover:bg-purple-100 dark:hover:bg-purple-900/40 transition-colors shadow-xs"
             >
               Resume
             </a>

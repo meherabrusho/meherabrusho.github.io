@@ -25,7 +25,7 @@ export default function Home() {
   return (
     <div className="flex flex-col space-y-16 md:space-y-20">
       {/* ═══════════ Hero Section ═══════════ */}
-      <section className="relative pt-6 sm:pt-10 pb-4 flex flex-col items-center text-center">
+      <section id="hero" className="relative pt-6 sm:pt-10 pb-4 flex flex-col items-center text-center">
         {/* Subtle background glow — toned down for premium feel */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div
@@ -38,41 +38,45 @@ export default function Home() {
           />
         </div>
 
-        {/* Initials avatar */}
-        <div className="fade-in-up mb-5">
-          <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center shadow-lg shadow-purple-500/20 dark:shadow-purple-500/30 ring-4 ring-white dark:ring-gray-900">
-            <span className="text-2xl font-bold text-white tracking-tight">MS</span>
+        {/* Initials avatar / monogram badge */}
+        <div className="fade-in-up mb-4 sm:mb-5">
+          <div className="relative p-1 rounded-full bg-gradient-to-tr from-purple-500 via-indigo-500 to-cyan-400 shadow-xl shadow-purple-500/20 dark:shadow-purple-500/30">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white dark:bg-gray-950 flex items-center justify-center border border-purple-100 dark:border-purple-900/50">
+              <span className="text-xl sm:text-2xl font-black bg-gradient-to-r from-purple-600 to-blue-600 dark:from-white dark:to-purple-200 bg-clip-text text-transparent tracking-tight">
+                MS
+              </span>
+            </div>
           </div>
         </div>
 
         {/* Role badge */}
-        <div className="fade-in-up fade-in-up-delay-1 inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-gray-100 dark:bg-gray-800/50 border border-gray-200/80 dark:border-gray-700/50 mb-8">
+        <div className="fade-in-up fade-in-up-delay-1 inline-flex items-center space-x-2 px-3.5 py-1.5 sm:px-4 sm:py-2 rounded-full bg-gray-100 dark:bg-gray-800/60 border border-gray-200/80 dark:border-gray-700/60 mb-5 sm:mb-8">
           <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-          <span className="text-sm font-medium text-gray-600 dark:text-gray-300">
+          <span className="text-xs sm:text-sm font-medium text-gray-700 dark:text-gray-300">
             AI Engineer & Technical Lead
           </span>
         </div>
 
-        <h1 className="fade-in-up fade-in-up-delay-2 text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6">
+        <h1 className="fade-in-up fade-in-up-delay-2 text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-4 sm:mb-6">
           <span className="block text-gray-900 dark:text-white">
             Mohtasin Meherab
           </span>
           <span className="block text-gray-900 dark:text-white">Sikder</span>
         </h1>
 
-        <p className="fade-in-up fade-in-up-delay-3 max-w-2xl text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-4 leading-relaxed">
+        <p className="fade-in-up fade-in-up-delay-3 max-w-2xl text-base sm:text-lg md:text-xl text-gray-500 dark:text-gray-400 mb-3 sm:mb-4 leading-relaxed">
           <span className="subtitle-gradient">Agentic AI · Machine Learning · Architecture</span>
         </p>
 
-        <p className="fade-in-up fade-in-up-delay-3 max-w-2xl text-base md:text-lg text-gray-600 dark:text-gray-400 mb-10 leading-relaxed">
+        <p className="fade-in-up fade-in-up-delay-3 max-w-2xl text-sm sm:text-base md:text-lg text-gray-600 dark:text-gray-400 mb-8 sm:mb-10 leading-relaxed px-2 sm:px-0">
           Architecting autonomous AI systems using multi-agent orchestration, LLM-driven automation, and scalable architectures — drawing on deep experience building robust ecosystems at Samsung Electronics.
         </p>
 
-        <div className="fade-in-up fade-in-up-delay-4 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 items-center justify-center">
+        <div className="fade-in-up fade-in-up-delay-4 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 items-center justify-center w-full max-w-sm sm:max-w-none">
           {/* Primary CTA */}
           <Link
             href="/projects"
-            className="btn-shimmer inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all hover:scale-[1.03] active:scale-95 shadow-lg shadow-gray-900/10 dark:shadow-white/5 w-full sm:w-auto"
+            className="btn-shimmer inline-flex items-center justify-center px-7 py-3 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-gray-900/10 dark:shadow-white/5 w-full sm:w-auto text-sm sm:text-base"
           >
             View Case Studies
             <ArrowRight className="w-4 h-4 ml-2" />
@@ -82,14 +86,14 @@ export default function Home() {
             href="/Resume - Mohtasin Meherab Sikder.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border border-purple-200 dark:border-purple-800/40 bg-purple-50/50 dark:bg-purple-950/20 text-purple-600 dark:text-purple-400 font-semibold hover:bg-purple-100 dark:hover:bg-purple-950/40 transition-all hover:scale-[1.03] active:scale-95 w-full sm:w-auto"
+            className="inline-flex items-center justify-center px-7 py-3 rounded-full border border-purple-300 dark:border-purple-800/60 bg-purple-50 dark:bg-purple-950/30 text-purple-700 dark:text-purple-300 font-semibold hover:bg-purple-100 dark:hover:bg-purple-900/40 transition-all hover:scale-[1.02] active:scale-95 w-full sm:w-auto text-sm sm:text-base shadow-xs"
           >
             Get Resume
           </a>
           {/* Tertiary CTA */}
           <a
             href="mailto:rusho1152032@gmail.com"
-            className="inline-flex items-center justify-center px-6 py-3.5 text-gray-500 dark:text-gray-400 font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors w-full sm:w-auto"
+            className="inline-flex items-center justify-center px-5 py-2.5 text-gray-600 dark:text-gray-400 font-medium hover:text-purple-600 dark:hover:text-purple-400 transition-colors w-full sm:w-auto text-sm"
           >
             <Mail className="w-4 h-4 mr-2" />
             Get In Touch
@@ -99,7 +103,7 @@ export default function Home() {
 
       {/* ═══════════ About Section ═══════════ */}
       <AnimateOnScroll>
-        <section>
+        <section id="about">
           <div className="glass-card rounded-2xl p-8 md:p-12 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-purple-500/5 to-transparent rounded-bl-full pointer-events-none" />
             <div className="relative">
@@ -142,7 +146,7 @@ export default function Home() {
       {/* ═══════════ Expertise Section ═══════════ */}
       <AnimateOnScroll>
         <section>
-          <div className="text-center mb-12">
+          <div className="mb-8 sm:mb-10">
             <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
               What I Do
             </h2>
@@ -212,8 +216,8 @@ export default function Home() {
 
       {/* ═══════════ Experience Timeline — Alt Background ═══════════ */}
       <AnimateOnScroll>
-        <section className="section-alt-bg">
-          <div className="text-center mb-12">
+        <section id="experience" className="section-alt-bg">
+          <div className="mb-8 sm:mb-10">
             <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
               Career
             </h2>
@@ -228,7 +232,7 @@ export default function Home() {
       {/* ═══════════ Tech Stack / Skills — Consolidated ═══════════ */}
       <AnimateOnScroll>
         <section>
-          <div className="text-center mb-12">
+          <div className="mb-8 sm:mb-10">
             <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
               Technologies
             </h2>
@@ -263,7 +267,7 @@ export default function Home() {
       {/* ═══════════ Achievements ═══════════ */}
       <AnimateOnScroll>
         <section>
-          <div className="text-center mb-12">
+          <div className="mb-8 sm:mb-10">
             <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
               Recognition
             </h2>
@@ -332,7 +336,7 @@ export default function Home() {
 
       {/* ═══════════ Featured Projects ═══════════ */}
       <AnimateOnScroll>
-        <section>
+        <section id="projects">
           <div className="flex items-end justify-between mb-10">
             <div>
               <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
@@ -357,7 +361,13 @@ export default function Home() {
                 href={`/projects/${project.slug}`}
                 className="glass-card hover-up hover-border-glow flex flex-col p-6 rounded-2xl group cursor-pointer"
               >
-                <div className="flex items-start justify-between mb-4">
+                {project.metric && (
+                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/50 mb-3 w-fit">
+                    <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+                    {project.metric}
+                  </div>
+                )}
+                <div className="flex items-start justify-between mb-3">
                   <h4 className="text-lg font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                     {project.title}
                   </h4>
@@ -441,7 +451,7 @@ export default function Home() {
 
       {/* ═══════════ Contact CTA ═══════════ */}
       <AnimateOnScroll>
-        <section className="relative">
+        <section id="contact" className="relative">
           <div className="glass-card rounded-2xl p-8 md:p-14 text-center relative overflow-hidden">
             {/* Stronger gradient mesh for CTA prominence */}
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/8 via-transparent to-blue-500/8 pointer-events-none" />

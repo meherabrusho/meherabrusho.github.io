@@ -13,12 +13,43 @@ export interface ProjectMetadata {
   link: string;
   featured?: boolean;
   order?: number;
+  metric?: string;
+  role?: string;
+  domain?: string;
 }
 
 export interface Project {
   metadata: ProjectMetadata;
   content: string;
 }
+
+const PROJECT_HIGHLIGHTS: Record<string, { metric: string; role: string; domain: string }> = {
+  'agentic-ai-orchestration-layer': {
+    metric: '80%+ Automated Triage',
+    role: 'Technical Lead · AI Systems',
+    domain: 'Agentic AI & MCP Orchestration',
+  },
+  'iot-device-onboarding-architecture': {
+    metric: '400+ Files · 0 Regressions',
+    role: 'Tech Lead · Samsung SmartThings',
+    domain: 'Distributed IoT & Mobile Platform',
+  },
+  'remote-d2d-test-framework': {
+    metric: 'Hardware-Free CI Automation',
+    role: 'Lead Engineer · Automation Infra',
+    domain: 'Virtualization & CI Guardrails',
+  },
+  'ble-zigbee-connection-modules': {
+    metric: '88% BLE Success Rate',
+    role: 'Core Contributor · IoT Modules',
+    domain: 'Hardware Protocol & Mesh Comms',
+  },
+  'portfolio-website': {
+    metric: 'Dynamic AI Canvas & SSG',
+    role: 'Full-Stack Architecture',
+    domain: 'Next.js & Performance Engineering',
+  },
+};
 
 export function getAllProjects(): ProjectMetadata[] {
   if (!fs.existsSync(contentDirectory)) {
@@ -34,6 +65,11 @@ export function getAllProjects(): ProjectMetadata[] {
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       
       const matterResult = matter(fileContents);
+      const defaults = PROJECT_HIGHLIGHTS[slug] || {
+        metric: '',
+        role: 'Engineering Lead',
+        domain: 'Software Architecture',
+      };
       
       return {
         slug,
@@ -44,6 +80,9 @@ export function getAllProjects(): ProjectMetadata[] {
         link: matterResult.data.link || '#',
         featured: matterResult.data.featured ?? false,
         order: matterResult.data.order ?? 99,
+        metric: matterResult.data.metric || defaults.metric,
+        role: matterResult.data.role || defaults.role,
+        domain: matterResult.data.domain || defaults.domain,
       };
     });
     
@@ -59,6 +98,11 @@ export function getProjectBySlug(slug: string): Project | null {
   
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const matterResult = matter(fileContents);
+  const defaults = PROJECT_HIGHLIGHTS[slug] || {
+    metric: '',
+    role: 'Engineering Lead',
+    domain: 'Software Architecture',
+  };
   
   return {
     metadata: {
@@ -70,6 +114,9 @@ export function getProjectBySlug(slug: string): Project | null {
       link: matterResult.data.link || '#',
       featured: matterResult.data.featured ?? false,
       order: matterResult.data.order ?? 99,
+      metric: matterResult.data.metric || defaults.metric,
+      role: matterResult.data.role || defaults.role,
+      domain: matterResult.data.domain || defaults.domain,
     },
     content: matterResult.content,
   };

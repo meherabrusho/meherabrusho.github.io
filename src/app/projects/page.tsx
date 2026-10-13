@@ -1,6 +1,6 @@
 import { getAllProjects } from "@/lib/projects";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { Cpu } from "lucide-react";
+import { Cpu, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 
@@ -34,6 +34,21 @@ export default function Projects() {
             key={project.title}
             className={`glass-card hover-up hover-glow flex flex-col p-6 rounded-2xl group fade-in-up fade-in-up-delay-${Math.min(index + 1, 6)}`}
           >
+            {/* Top metadata strip: Key Impact Metric + Role */}
+            <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+              {project.metric ? (
+                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-purple-50 dark:bg-purple-950/40 text-purple-700 dark:text-purple-300 border border-purple-200/60 dark:border-purple-800/50">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse" />
+                  {project.metric}
+                </span>
+              ) : <div />}
+              {project.role && (
+                <span className="text-xs font-mono text-gray-500 dark:text-gray-400">
+                  {project.role}
+                </span>
+              )}
+            </div>
+
             <div className="flex items-start justify-between mb-3">
               <Link href={`/projects/${project.slug}`} className="block group">
                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-cyan-400 transition-colors">
@@ -57,12 +72,13 @@ export default function Projects() {
               ))}
             </div>
 
-            <div className="flex space-x-4 mt-auto">
+            <div className="flex items-center space-x-4 mt-auto pt-4 border-t border-gray-100 dark:border-gray-800/60">
               <Link
                 href={`/projects/${project.slug}`}
-                className="flex items-center text-sm font-medium text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors mr-auto"
+                className="inline-flex items-center text-sm font-semibold text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors mr-auto group/link"
               >
                 Read Case Study
+                <ArrowRight className="w-4 h-4 ml-1.5 group-hover/link:translate-x-1 transition-transform" />
               </Link>
               {project.repo && (
                 <a

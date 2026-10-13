@@ -3,7 +3,7 @@ import { Inter, Outfit, Geist_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Providers from "@/components/Providers";
-import NeuralBackground from "@/components/NeuralBackground";
+import SiteBackground from "@/components/SiteBackground";
 import "./globals.css";
 
 const inter = Inter({
@@ -66,7 +66,7 @@ export default function RootLayout({
           >
             Skip to main content
           </a>
-          <NeuralBackground />
+          <SiteBackground />
           <Navbar />
           <main
             id="main"

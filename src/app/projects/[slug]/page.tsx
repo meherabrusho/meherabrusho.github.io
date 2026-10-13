@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
-import { ArrowLeft as ArrowLeftIcon, Cpu } from "lucide-react";
+import { ArrowLeft as ArrowLeftIcon, Cpu, Briefcase, TrendingUp, Layers } from "lucide-react";
 import Mermaid from "@/components/Mermaid";
 import type { Metadata } from "next";
 
@@ -96,6 +96,50 @@ export default async function ProjectCaseStudy({ params }: Props) {
           )}
         </div>
       </header>
+
+      {/* Executive Overview Bento Grid */}
+      <section aria-label="Executive Overview" className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
+        <div className="glass-card p-4 rounded-xl flex flex-col justify-between">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
+            <Briefcase className="w-3.5 h-3.5 flex-shrink-0" />
+            <span>Role</span>
+          </div>
+          <p className="text-sm font-bold text-gray-900 dark:text-white leading-snug">
+            {project.metadata.role || "Engineering Lead"}
+          </p>
+        </div>
+
+        <div className="glass-card p-4 rounded-xl flex flex-col justify-between">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
+            <Cpu className="w-3.5 h-3.5 flex-shrink-0" />
+            <span>Domain</span>
+          </div>
+          <p className="text-sm font-bold text-gray-900 dark:text-white leading-snug">
+            {project.metadata.domain || "Architecture"}
+          </p>
+        </div>
+
+        <div className="glass-card p-4 rounded-xl flex flex-col justify-between border-purple-500/30 dark:border-purple-500/30 bg-purple-500/[0.04]">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
+            <TrendingUp className="w-3.5 h-3.5 flex-shrink-0" />
+            <span>Key Impact</span>
+          </div>
+          <p className="text-sm font-bold text-purple-700 dark:text-purple-300 leading-snug flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse flex-shrink-0" />
+            {project.metadata.metric || "Production Scale"}
+          </p>
+        </div>
+
+        <div className="glass-card p-4 rounded-xl flex flex-col justify-between">
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
+            <Layers className="w-3.5 h-3.5 flex-shrink-0" />
+            <span>Core Tech</span>
+          </div>
+          <p className="text-xs font-mono text-gray-700 dark:text-gray-300 leading-relaxed truncate" title={project.metadata.tags.slice(0, 3).join(", ")}>
+            {project.metadata.tags.slice(0, 3).join(", ") || "Full Stack"}
+          </p>
+        </div>
+      </section>
 
       <div className="prose prose-lg dark:prose-invert max-w-none prose-headings:font-heading prose-a:text-purple-600 dark:prose-a:text-purple-400 prose-code:before:content-none prose-code:after:content-none prose-pre:bg-gray-50 dark:prose-pre:bg-gray-900/50 prose-pre:border prose-pre:border-gray-200/50 dark:prose-pre:border-gray-800/50">
         <ReactMarkdown
