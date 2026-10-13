@@ -14,7 +14,6 @@ import { education } from '@/data/achievements';
 import { getAllPosts } from '@/lib/blog';
 import ExperienceTimeline from '@/components/ExperienceTimeline';
 import AnimateOnScroll from '@/components/AnimateOnScroll';
-import HeroIcons from '@/components/HeroIcons';
 
 export default function Home() {
   const latestPosts = getAllPosts().slice(0, 3);
@@ -24,9 +23,9 @@ export default function Home() {
     : allProjects.slice(0, 3);
 
   return (
-    <div className="flex flex-col space-y-24 md:space-y-32">
+    <div className="flex flex-col space-y-16 md:space-y-20">
       {/* ═══════════ Hero Section ═══════════ */}
-      <section className="relative pt-16 sm:pt-24 pb-6 flex flex-col items-center text-center">
+      <section className="relative pt-6 sm:pt-10 pb-4 flex flex-col items-center text-center">
         {/* Subtle background glow — toned down for premium feel */}
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div
@@ -39,12 +38,9 @@ export default function Home() {
           />
         </div>
 
-        {/* Floating tech icons */}
-        <HeroIcons />
-
         {/* Initials avatar */}
-        <div className="fade-in-up mb-6">
-          <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center shadow-lg shadow-purple-500/20 dark:shadow-purple-500/30 ring-4 ring-white dark:ring-gray-900">
+        <div className="fade-in-up mb-5">
+          <div className="w-18 h-18 sm:w-20 sm:h-20 rounded-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center shadow-lg shadow-purple-500/20 dark:shadow-purple-500/30 ring-4 ring-white dark:ring-gray-900">
             <span className="text-2xl font-bold text-white tracking-tight">MS</span>
           </div>
         </div>
@@ -143,11 +139,6 @@ export default function Home() {
         </section>
       </AnimateOnScroll>
 
-      {/* ─── Section Break ─── */}
-      <div className="section-break" aria-hidden="true">
-        <span className="mx-4 w-1.5 h-1.5 rounded-full bg-purple-400/40" />
-      </div>
-
       {/* ═══════════ Expertise Section ═══════════ */}
       <AnimateOnScroll>
         <section>
@@ -221,7 +212,7 @@ export default function Home() {
 
       {/* ═══════════ Experience Timeline — Alt Background ═══════════ */}
       <AnimateOnScroll>
-        <section className="section-alt-bg rounded-3xl">
+        <section className="section-alt-bg">
           <div className="text-center mb-12">
             <h2 className="text-sm font-semibold text-purple-600 dark:text-purple-400 uppercase tracking-wider mb-2">
               Career
@@ -233,11 +224,6 @@ export default function Home() {
           <ExperienceTimeline />
         </section>
       </AnimateOnScroll>
-
-      {/* ─── Section Break ─── */}
-      <div className="section-break" aria-hidden="true">
-        <span className="mx-4 w-1.5 h-1.5 rounded-full bg-purple-400/40" />
-      </div>
 
       {/* ═══════════ Tech Stack / Skills — Consolidated ═══════════ */}
       <AnimateOnScroll>
@@ -261,7 +247,7 @@ export default function Home() {
                     {category.items.map((item) => (
                       <span
                         key={item}
-                        className="skill-tag px-3 py-1.5 text-sm font-mono rounded-lg bg-gray-100 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/50 dark:border-gray-700/50"
+                        className="skill-tag px-2.5 py-1 text-xs font-mono rounded-md bg-gray-100/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60"
                       >
                         {item}
                       </span>
@@ -344,11 +330,6 @@ export default function Home() {
         </section>
       </AnimateOnScroll>
 
-      {/* ─── Section Break ─── */}
-      <div className="section-break" aria-hidden="true">
-        <span className="mx-4 w-1.5 h-1.5 rounded-full bg-purple-400/40" />
-      </div>
-
       {/* ═══════════ Featured Projects ═══════════ */}
       <AnimateOnScroll>
         <section>
@@ -389,7 +370,7 @@ export default function Home() {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-0.5 text-xs font-mono rounded-md bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400"
+                      className="px-2.5 py-1 text-xs font-mono rounded-md bg-gray-100/80 dark:bg-gray-800/80 text-gray-700 dark:text-gray-300 border border-gray-200/60 dark:border-gray-700/60"
                     >
                       {tag}
                     </span>
